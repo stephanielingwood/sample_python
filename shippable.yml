@@ -1,25 +1,15 @@
 language: python
-
+#set language version. This is only required if you use the default Shippable image for your build
 python:
-  - 2.7
-
+    - 2.7
 env:
-  global:
-    - TEST_VAR=reallyAwesomeString
-
-install:
-  - pip install -r requirements.txt
-
-# Make folders for the reports
-before_script:
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
-
-script:
-  - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  - which python && coverage run --branch test.py
-  - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-
-notifications:
-  email:
-   - exampleone@org.com
+  - LIVELY_REPO_DIR=/root/src/github.com/myrepo
+build:
+    post_ci:
+      - sudo apt-get install tree
+      - cd /root/src
+      - tree
+      - docker rm -f postgres  &> /dev/null || true
+      - docker run --name postgres --publish 5432:5432 --detach=true --volume $LIVELY_REPO_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh:/docker-entrypoint.sh postgres
+    on_failure:
+      - docker logs --tail="all" gunicorn
