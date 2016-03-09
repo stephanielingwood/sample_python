@@ -8,6 +8,9 @@ build:
     post_ci:
       - echo $LIVELY_REPO_DIR
       - ls -la $LIVELY_REPO_DIR
+      - mkdir $LIVELY_REPO_DIR/deploy
+      - mkdir $LIVELY_REPO_DIR/deploy/docker
+      - mkdir $LIVELY_REPO_DIR/deploy/docker/containers
       - mkdir $LIVELY_REPO_DIR/deploy/docker/containers/postgres
       - touch $LIVELY_REPO_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh
       - echo "test string" > $LIVELY_REPO_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh
