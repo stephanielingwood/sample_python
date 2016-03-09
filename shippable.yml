@@ -18,7 +18,7 @@ build:
       - docker rm -f postgres  &> /dev/null || true
       - docker run postgres
       - docker ps
-      -ls -la
+      - ls -la
       - cat ./docker-entrypoint.sh
     on_failure:
       - docker logs --tail="all" gunicorn
