@@ -16,7 +16,6 @@ build:
       - echo "test string" > $LIVELY_REPO_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh
       - cat $LIVELY_REPO_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh
       - docker rm -f postgres  &> /dev/null || true
-    #   - docker run --name postgres --publish 5432:5432 --detach=true --volume $LIVELY_REPO_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh:/docker-entrypoint.sh postgres /bin/bash
       - docker run postgres
       - docker ps
       -ls -la
