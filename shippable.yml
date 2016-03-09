@@ -5,18 +5,17 @@ python:
 env:
   - LIVELY_REPO_DIR=/root/src/github.com/stephanielingwood/sample_python
 build:
+    pre_ci_boot:
+        options: -v $LIVELY_REPO_DIR/
     post_ci:
-      - echo $LIVELY_REPO_DIR
-      - ls -la $LIVELY_REPO_DIR
-      - mkdir $LIVELY_REPO_DIR/deploy
-      - mkdir $LIVELY_REPO_DIR/deploy/docker
-      - mkdir $LIVELY_REPO_DIR/deploy/docker/containers
-      - mkdir $LIVELY_REPO_DIR/deploy/docker/containers/postgres
-      - touch $LIVELY_REPO_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh
-      - echo "test string" > $LIVELY_REPO_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh
-      - cat $LIVELY_REPO_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh
       - docker rm -f postgres  &> /dev/null || true
-      - docker run -d postgres
+      - docker run --name postgres -i -t --publish 5432:5432 --volumes-from $CONTAINER_NAME postgres /bin/bash
+      - ls -la
+      - sudo apt-get install tree
+      - tree
+      - exit
+      - docker ps
+      - docker stop -t=0 fd441ff9a7e6 675ad55a1808
       - docker ps
       - ls -la
       - cat ./docker-entrypoint.sh
