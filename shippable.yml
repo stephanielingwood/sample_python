@@ -2,13 +2,13 @@ language: python
 #set language version. This is only required if you use the default Shippable image for your build
 python:
     - 2.7
-env:
-  - LIVELY_REPO_DIR=/root/src/github.com/stephanielingwood/sample_python
+
 build:
     pre_ci_boot:
-        options: -v $LIVELY_REPO_DIR/
+        options: -v /data
     post_ci:
       - docker rm -f postgres  &> /dev/null || true
+      - cp $SHIPPABLE_REPO_DIR/README.md /data/README.md
       - docker run --name postgres -i -t --publish 5432:5432 --volumes-from $CONTAINER_NAME postgres /bin/bash
       - ls -la
       - sudo apt-get install tree
