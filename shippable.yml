@@ -1,3 +1,4 @@
+#set your language below
 language: python
 #set language version. This is only required if you use the default Shippable image for your build
 python:
@@ -8,13 +9,10 @@ build:
         options: -v /dataDir
     post_ci:
       - docker rm -f postgres  &> /dev/null || true
-      - cp $SHIPPABLE_BUILD_DIR/README.md /dataDir/README.md
-      - touch /dataDir/entrypoint.sh
-      - echo '#! /bin/bash' >> /dataDir/entrypoint.sh
-      - echo 'ls -la /' >> /dataDir/entrypoint.sh
-      - echo 'ls -la /dataDir' >> /dataDir/entrypoint.sh
-      - chmod +x /dataDir/entrypoint.sh
-      - docker run -i --name postgres --publish 5432:5432 --volumes-from $SHIPPABLE_CONTAINER_NAME postgres /dataDir/entrypoint.sh
+      - cp $SHIPPABLE_BUILD_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh /dataDir/docker-entrypoint.sh
+      - docker run -i --name postgres --publish 5432:5432 --volumes-from $SHIPPABLE_CONTAINER_NAME postgres /dataDir/docker-entrypoint.sh
       - docker ps
       - docker stop -t=0 postgres
       - docker ps
+    on_failure:
+          - docker logs --tail="all" gunicorn
