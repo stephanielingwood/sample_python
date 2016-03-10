@@ -10,6 +10,7 @@ build:
     post_ci:
       - docker rm -f postgres &> /dev/null || true
       - cp $SHIPPABLE_BUILD_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh /dataDir/docker-entrypoint.sh
+      - chmod +x /dataDir/docker-entrypoint.sh
       - docker run -i --name postgres --publish 5432:5432 --detach=true --volumes-from $SHIPPABLE_CONTAINER_NAME postgres /dataDir/docker-entrypoint.sh
       - docker ps -a
       - docker ps -a 
