@@ -19,7 +19,7 @@ build:
       - docker ps
       - docker stop -t=0 fd441ff9a7e6 675ad55a1808
       - docker ps
-      - ls -la
+      - ls -al
       - cat ./docker-entrypoint.sh
     on_failure:
       - docker logs --tail="all" gunicorn
