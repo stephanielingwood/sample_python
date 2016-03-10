@@ -11,8 +11,8 @@ build:
       - cp $SHIPPABLE_BUILD_DIR/README.md /data/README.md
       - touch /data/startup.sh
       - echo '#! /bin/bash' >> /data/startup.sh
-      - echo 'sudo apt-get install tree' >> /data/startup.sh
-      - echo 'tree' >> /data/startup.sh
+      - echo 'ls -la /' >> /data/startup.sh
+      - echo 'ls -la /data' >> /data/startup.sh
       - chmod +x /data/startup.sh
       - echo $CONTAINER_NAME
       - echo $SHIPPABLE_CONTAINER_NAME
