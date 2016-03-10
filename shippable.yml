@@ -8,6 +8,9 @@ build:
     pre_ci_boot:
         options: -v /dataDir
     post_ci:
+      - sudo apt-get install tree 
+      - cd $SHIPPABLE_BUILD_DIR
+      - tree
       - docker rm -f postgres &> /dev/null || true
       - cp $SHIPPABLE_BUILD_DIR/deploy/docker/containers/postgres/docker-entrypoint.sh /dataDir/docker-entrypoint.sh
       - docker run -i --name postgres --publish 5432:5432 --detach=true --volumes-from $SHIPPABLE_CONTAINER_NAME --entrypoint /dataDir/docker-entrypoint.sh postgres
