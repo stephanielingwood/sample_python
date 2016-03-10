@@ -12,8 +12,8 @@ build:
       - touch /dataDir/startup.sh
       - echo '#! /bin/bash' >> /dataDir/entrypoint.sh
       - echo 'ls -la /' >> /dataDir/entrypoint.sh
-      - echo 'ls -la /data' >> /dataDir/entrypoint.sh
-      - chmod +x /data/startup.sh
+      - echo 'ls -la /dataDir' >> /dataDir/entrypoint.sh
+      - chmod +x /dataDir/startup.sh
       - docker run -i --name postgres --publish 5432:5432 --volumes-from $SHIPPABLE_CONTAINER_NAME postgres /data/entrypoint.sh
       - docker ps
       - docker stop -t=0 postgres
