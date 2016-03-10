@@ -8,7 +8,7 @@ build:
         options: -v /dataDir
     post_ci:
       - docker rm -f postgres  &> /dev/null || true
-      - cp $SHIPPABLE_BUILD_DIR/README.md /data/README.md
+      - cp $SHIPPABLE_BUILD_DIR/README.md /dataDir/README.md
       - touch /dataDir/startup.sh
       - echo '#! /bin/bash' >> /dataDir/entrypoint.sh
       - echo 'ls -la /' >> /dataDir/entrypoint.sh
