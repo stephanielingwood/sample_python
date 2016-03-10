@@ -9,9 +9,13 @@ build:
     post_ci:
       - docker rm -f postgres  &> /dev/null || true
       - cp $SHIPPABLE_BUILD_DIR/README.md /data/README.md
+      - touch /data/startup.sh
+      - echo '#! /bin/bash' > /data/startup.sh
+      - echo 'sudo apt-get install tree' > /data/startup.sh
+      - echo 'tree' > /data/startup.sh
       - echo $CONTAINER_NAME
       - echo $SHIPPABLE_CONTAINER_NAME
-      - docker run -i --name postgres --publish 5432:5432 --volumes-from $SHIPPABLE_CONTAINER_NAME postgres "ls -la"
+      - docker run -i --name postgres --publish 5432:5432 --volumes-from $SHIPPABLE_CONTAINER_NAME postgres /data/startup.sh
       - ls -la
       - sudo apt-get install tree
       - tree
