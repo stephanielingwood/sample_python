@@ -5,25 +5,16 @@ python:
 
 build:
     pre_ci_boot:
-        options: -v /data
+        options: -v /dataDir
     post_ci:
       - docker rm -f postgres  &> /dev/null || true
       - cp $SHIPPABLE_BUILD_DIR/README.md /data/README.md
-      - touch /data/startup.sh
-      - echo '#! /bin/bash' >> /data/startup.sh
-      - echo 'ls -la /' >> /data/startup.sh
-      - echo 'ls -la /data' >> /data/startup.sh
+      - touch /dataDir/startup.sh
+      - echo '#! /bin/bash' >> /dataDir/entrypoint.sh
+      - echo 'ls -la /' >> /dataDir/entrypoint.sh
+      - echo 'ls -la /data' >> /dataDir/entrypoint.sh
       - chmod +x /data/startup.sh
-      - echo $CONTAINER_NAME
-      - echo $SHIPPABLE_CONTAINER_NAME
-      - docker run -i --name postgres --publish 5432:5432 --volumes-from $SHIPPABLE_CONTAINER_NAME postgres /data/startup.sh
-      - ls -la
-      - sudo apt-get install tree
-      - tree
+      - docker run -i --name postgres --publish 5432:5432 --volumes-from $SHIPPABLE_CONTAINER_NAME postgres /data/entrypoint.sh
       - docker ps
-      - docker stop -t=0 fd441ff9a7e6 675ad55a1808
+      - docker stop -t=0 postgres
       - docker ps
-      - ls -al
-      - cat ./docker-entrypoint.sh
-    on_failure:
-      - docker logs --tail="all" gunicorn
