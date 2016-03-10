@@ -11,11 +11,10 @@ build:
       - cp $SHIPPABLE_BUILD_DIR/README.md /data/README.md
       - echo $CONTAINER_NAME
       - echo $SHIPPABLE_CONTAINER_NAME
-      - docker run -i --name postgres --publish 5432:5432 --volumes-from $SHIPPABLE_CONTAINER_NAME postgres /bin/bash
+      - docker run -i --name postgres --publish 5432:5432 --volumes-from $SHIPPABLE_CONTAINER_NAME postgres "cat /data/README.md"
       - ls -la
       - sudo apt-get install tree
       - tree
-      - exit
       - docker ps
       - docker stop -t=0 fd441ff9a7e6 675ad55a1808
       - docker ps
