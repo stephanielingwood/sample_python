@@ -13,7 +13,8 @@ install:
 build:
   ci:  
     # - mkdir -p shippable/testresults
-    # - mkdir -p shippable/codecoverage    
+    # - mkdir -p shippable/codecoverage
+    - cd shippable/codecoverage/nonexistantdir
     - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
