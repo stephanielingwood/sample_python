@@ -10,16 +10,31 @@ env:
 install:
   - pip install -r requirements.txt
 
-# Make folders for the reports
-before_script:
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
+build:
+  ci:  
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage    
+    - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+    - which python && coverage run --branch test.py
+    - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
 
-script:
-  - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  - which python && coverage run --branch test.py
-  - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-
-notifications:
-  email:
-   - exampleone@org.com
+integrations:
+    notifications:
+        - integrationName: slackTestIssues
+          type: slack
+          recipients:
+            - "#testissues"
+          branches:
+              only:
+                - notifications
+          on_success: always
+          on_failure: always
+        - integrationName: slackTestIssues
+          type: slack
+          recipients:
+            - "#test_interns"
+          branches:
+              only:
+                - notifications
+          on_success: always
+          on_failure: always
