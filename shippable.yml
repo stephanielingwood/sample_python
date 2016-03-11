@@ -56,7 +56,6 @@ integrations:
             - stephanieshiptesting@gmail.com
           branches:
             only:
-                - master
-                - dev
+                - notifications
           on_success: always
           on_failure: always
