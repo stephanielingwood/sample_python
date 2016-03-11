@@ -24,6 +24,7 @@ integrations:
           type: slack
           recipients:
             - "#testissues"
+            - "@stephanielingwood"
           branches:
               only:
                 - notifications
@@ -36,5 +37,26 @@ integrations:
           branches:
               only:
                 - notifications
+          on_success: always
+          on_failure: always
+        - integrationName: irc
+          type: irc
+          recipients:
+            - "chat.freenode.net#eddyline"
+            - "chat.freenode.net#eddyline1"
+          branches:
+            only:
+                - notifications
+          on_success: always
+          on_failure: always
+        - integrationName: email
+          type: email
+          recipients:
+            - stephanie@shippable.com
+            - stephanieshiptesting@gmail.com
+          branches:
+            only:
+                - master
+                - dev
           on_success: always
           on_failure: always
