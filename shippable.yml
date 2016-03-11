@@ -42,8 +42,8 @@ integrations:
         - integrationName: irc
           type: irc
           recipients:
+            - "chat.freenode.net#eddyline1"
             - "chat.freenode.net#eddyline"
-            - "chat.freenode.net#test-irc"
           branches:
             only:
                 - notifications
