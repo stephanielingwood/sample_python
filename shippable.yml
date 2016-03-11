@@ -30,7 +30,7 @@ integrations:
                 - notifications
           on_success: always
           on_failure: always
-        - integrationName: slackTestIssues
+        - integrationName: slackTestInterns
           type: slack
           recipients:
             - "#test_interns"
@@ -43,7 +43,7 @@ integrations:
           type: irc
           recipients:
             - "chat.freenode.net#eddyline"
-            - "chat.freenode.net#eddyline1"
+            - "chat.freenode.net#test-irc"
           branches:
             only:
                 - notifications
