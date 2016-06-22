@@ -31,7 +31,7 @@ integrations:
       payload:
         - component=$REPO_NAME
         - version=$COMMIT
-        - success="yeah a success"
+        - success=yeah
       on_success: always
       on_start: never
       on_failure: never
