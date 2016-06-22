@@ -8,11 +8,6 @@ env:
     - TEST_VAR=reallyAwesomeString
 
 build:
-  # pre_ci_boot:
-  #   image_name: manishas/myImage
-  #   image_tag: latest
-  #   pull: true
-  #   options: "-e HOME=/root"
   ci:
     - pip install -r requirements.txt
     - mkdir -p shippable/testresults
@@ -22,6 +17,21 @@ build:
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
 
 integrations:
-  hub:
-    - integrationName: stephDocker
-      type: docker
+  notifications:
+    - integrationName: testOnStart
+      type: webhook
+      payload:
+        - component=$REPO_NAME
+        - version=$COMMIT
+      on_success: never
+      on_start: always
+    - integrationName: testOnSuccess
+      type: webhook
+      payload:
+        - component=$REPO_NAME
+        - version=$COMMIT
+        - success="yeah a success"
+      on_success: always
+      on_start: never
+      on_failure: never
+      
