@@ -31,18 +31,18 @@ integrations:
       payload:
         - component=$REPO_NAME
         - version=$COMMIT
-        - myArray=["testing"]
-        - success=yeah
+        # - myArray=["testing"]
+        - success="yeah quotes yeah"
       on_success: always
       on_start: never
       on_failure: never
-    - integrationName: testOnFailure
-      type: webhook
-      payload:
-        - component=$REPO_NAME
-        - version=$COMMIT
-        - failure=yeah
-      on_success: never
-      on_start: never
-      on_failure: always
+    # - integrationName: testOnFailure
+    #   type: webhook
+    #   payload:
+    #     - component=$REPO_NAME
+    #     - version=$COMMIT
+    #     - failure=yeah
+    #   on_success: never
+    #   on_start: never
+    #   on_failure: always
       
