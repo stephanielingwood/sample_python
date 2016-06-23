@@ -31,7 +31,7 @@ integrations:
       payload:
         - component=$REPO_NAME
         - version=$COMMIT
-        - myArray=["testing"]
+        - myArray=['testing']
         - success='yeah quotes yeah'
       on_success: always
       on_start: never
