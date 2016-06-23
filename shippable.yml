@@ -32,7 +32,7 @@ integrations:
         - component=$REPO_NAME
         - version=$COMMIT
         - myArray=[$COMMIT]
-        - success='single quotes actually work'
+        - success=apostrophe's
       on_success: always
       on_start: never
       on_failure: never
