@@ -32,7 +32,7 @@ integrations:
         - component=$REPO_NAME
         - version=$COMMIT
         # - myArray=["testing"]
-        - success="yeah quotes yeah"
+        - success='yeah quotes yeah'
       on_success: always
       on_start: never
       on_failure: never
