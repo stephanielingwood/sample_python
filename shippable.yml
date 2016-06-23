@@ -31,7 +31,7 @@ integrations:
       payload:
         - component=$REPO_NAME
         - version=$COMMIT
-        - myArray=["$COMMIT"]
+        - myArray=[$COMMIT]
         - success='single quotes actually work'
       on_success: always
       on_start: never
