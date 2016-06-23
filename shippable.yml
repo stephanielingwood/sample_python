@@ -31,8 +31,8 @@ integrations:
       payload:
         - component=$REPO_NAME
         - version=$COMMIT
-        - myArray=['testing']
-        - success="double quotes are the bomb"
+        - myArray=["$COMMIT"]
+        - success='single quotes actually work'
       on_success: always
       on_start: never
       on_failure: never
