@@ -15,7 +15,8 @@ build:
   #   options: "-e HOME=/root"
   ci:
     - node --version
-    - nvm ls
+    - echo "source ~/.nvm/nvm.sh" >> $HOME/.bashrc
+    - nvm --help
     - npm --version
     - npm update
     - npm --version
