@@ -16,7 +16,7 @@ build:
   ci:
     - node --version
     - ls -la ~/ | grep bash
-    - echo "source ~/.nvm/nvm.sh" >> $HOME/.bashrc
+    - echo "source ~/.nvm/nvm.sh" >> ~/.bashrc
     - ls -la ~/ | grep nvm
     - nvm --help
     - npm --version
