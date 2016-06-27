@@ -14,6 +14,7 @@ build:
   #   pull: true
   #   options: "-e HOME=/root"
   ci:
+    - node --version
     - pip install -r requirements.txt
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
