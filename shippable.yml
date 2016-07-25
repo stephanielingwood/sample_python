@@ -30,7 +30,7 @@ integrations:
               only:
                 - notifications
           on_start: always
-          on_success: never
+          on_success: always
           on_failure: always
         # - integrationName: slackTestInterns
         #   type: slack
