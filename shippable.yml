@@ -34,7 +34,7 @@ integrations:
             - master
             - dev
         on_success: always
-        on_failure: always
+        # on_failure: always
         on_pull_request: never
         on_start: always
       - integrationName: stephSlack
