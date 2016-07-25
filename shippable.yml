@@ -24,27 +24,27 @@ integrations:
         - integrationName: slackTestIssues
           type: slack
           recipients:
-            - "#testissues"
+            # - "#testissues"
             - "@stephanielingwood"
           branches:
               only:
                 - notifications
           on_success: always
           on_failure: always
-        - integrationName: slackTestInterns
-          type: slack
-          recipients:
-            - "#test_interns"
-          branches:
-              only:
-                - notifications
-          on_success: always
-          on_failure: always
+        # - integrationName: slackTestInterns
+        #   type: slack
+        #   recipients:
+        #     - "#test_interns"
+        #   branches:
+        #       only:
+        #         - notifications
+        #   on_success: always
+        #   on_failure: always
         - integrationName: irc
           type: irc
           recipients:
             - "chat.freenode.net#test-irc"
-            - "chat.freenode.net#eddyline1"
+            # - "chat.freenode.net#eddyline1"
           branches:
             only:
                 - notifications
@@ -54,7 +54,7 @@ integrations:
           type: email
           recipients:
             - stephanie@shippable.com
-            - stephanieshiptesting@gmail.com
+            # - stephanieshiptesting@gmail.com
           branches:
             only:
                 - notifications
