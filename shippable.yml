@@ -29,10 +29,10 @@ integrations:
           - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
           - FOO=BAR
           - FIZZ=BUZZ
-        branches:
-          only:
-            - master
-            - dev
+        # branches:
+        #   only:
+        #     - master
+        #     - dev
         on_success: always
         # on_failure: always
         on_pull_request: never
