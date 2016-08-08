@@ -14,14 +14,14 @@ build:
   #   pull: true
   #   options: "-e HOME=/root"
   ci:
-    - node --version
-    - ls -la ~/ | grep bash
-    - echo "source ~/.nvm/nvm.sh" >> ~/.bashrc
-    - ls -la ~/ | grep nvm
-    - nvm --help
-    - npm --version
-    - npm update
-    - npm --version
+    # - node --version
+    # - ls -la ~/ | grep bash
+    # - echo "source ~/.nvm/nvm.sh" >> ~/.bashrc
+    # - ls -la ~/ | grep nvm
+    # - nvm --help
+    # - npm --version
+    # - npm update
+    # - npm --version
     - pip install -r requirements.txt
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
