@@ -21,52 +21,43 @@ build:
 
 integrations:
     notifications:
-      # - integrationName: stephWebhook
-      #   type: webhook
-      #   payload:
-      #     - isPRBuild=$IS_PULL_REQUEST
-      #     - branchName=$BRANCH
-      #     - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
-      #     - FOO=BAR
-      #     - FIZZ=BUZZ
-        # branches:
-        #   only:
-        #     - master
-        #     - dev
-        # on_success: always
-        # on_failure: always
-      #   on_pull_request: never
-      #   on_start: always
-      # - integrationName: stephSlack
-      #   type: slack
-      #   recipients:
-          # - "#testissues"
-        #   - "@stephanielingwood"
-        # branches:
-        #     only:
-        #       - notifications
-        # on_start: always
-        # on_success: always
-        # on_failure: always
-      # - integrationName: slackTestInterns
-      #   type: slack
-      #   recipients:
-      #     - "#test_interns"
-      #   branches:
-      #       only:
-      #         - notifications
-      #   on_success: always
-      #   on_failure: always
-      # - integrationName: irc
-      #   type: irc
-      #   recipients:
-      #     - "chat.freenode.net#test-irc"
-          # - "chat.freenode.net#eddyline1"
-        # branches:
-        #   only:
-        #       - notifications
-        # on_success: always
-        # on_failure: always
+      - integrationName: stephWebhook
+        type: webhook
+        payload:
+          - isPRBuild=$IS_PULL_REQUEST
+          - branchName=$BRANCH
+          - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
+          - FOO=BAR
+          - FIZZ=BUZZ
+        branches:
+          only:
+            - master
+            - dev
+        on_success: always
+        on_failure: always
+        on_pull_request: never
+        on_start: always
+      - integrationName: stephSlack
+        type: slack
+        recipients:
+          - "#testissues"
+          - "@stephanielingwood"
+        branches:
+            only:
+              - notifications
+        on_start: always
+        on_success: always
+        on_failure: always
+      - integrationName: irc
+        type: irc
+        recipients:
+          - "chat.freenode.net#test-irc"
+          - "chat.freenode.net#eddyline1"
+        branches:
+          only:
+              - notifications
+        on_success: always
+        on_failure: always
       - integrationName: email
         type: email
         recipients:
