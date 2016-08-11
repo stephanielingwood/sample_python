@@ -19,23 +19,23 @@ build:
 
 integrations:
   notifications:
-    - integrationName: testOnStart
+    - integrationName: stephWebhook
       type: webhook
       payload:
         - component=$REPO_NAME
         - version=$COMMIT
       on_success: never
       on_start: always
-    - integrationName: testOnSuccess
-      type: webhook
-      payload:
-        - component=$REPO_NAME
-        - version=$COMMIT
-        - myArray=[$COMMIT]
-        - success=apostrophe's
-      on_success: always
-      on_start: never
-      on_failure: never
+    # - integrationName: testOnSuccess
+    #   type: webhook
+    #   payload:
+    #     - component=$REPO_NAME
+    #     - version=$COMMIT
+    #     - myArray=[$COMMIT]
+    #     - success=apostrophe's
+    #   on_success: always
+    #   on_start: never
+    #   on_failure: never
     # - integrationName: testOnFailure
     #   type: webhook
     #   payload:
