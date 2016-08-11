@@ -21,33 +21,33 @@ build:
 
 integrations:
     notifications:
-      - integrationName: stephWebhook
-        type: webhook
-        payload:
-          - isPRBuild=$IS_PULL_REQUEST
-          - branchName=$BRANCH
-          - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
-          - FOO=BAR
-          - FIZZ=BUZZ
+      # - integrationName: stephWebhook
+      #   type: webhook
+      #   payload:
+      #     - isPRBuild=$IS_PULL_REQUEST
+      #     - branchName=$BRANCH
+      #     - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
+      #     - FOO=BAR
+      #     - FIZZ=BUZZ
         # branches:
         #   only:
         #     - master
         #     - dev
-        on_success: always
+        # on_success: always
         # on_failure: always
-        on_pull_request: never
-        on_start: always
-      - integrationName: stephSlack
-        type: slack
-        recipients:
+      #   on_pull_request: never
+      #   on_start: always
+      # - integrationName: stephSlack
+      #   type: slack
+      #   recipients:
           # - "#testissues"
-          - "@stephanielingwood"
-        branches:
-            only:
-              - notifications
-        on_start: always
-        on_success: always
-        on_failure: always
+        #   - "@stephanielingwood"
+        # branches:
+        #     only:
+        #       - notifications
+        # on_start: always
+        # on_success: always
+        # on_failure: always
       # - integrationName: slackTestInterns
       #   type: slack
       #   recipients:
@@ -67,13 +67,13 @@ integrations:
               - notifications
         on_success: always
         on_failure: always
-      - integrationName: email
-        type: email
-        recipients:
-          - stephanie@shippable.com
-          # - stephanieshiptesting@gmail.com
-        branches:
-          only:
-              - notifications
-        on_success: always
-        on_failure: always
+      # - integrationName: email
+      #   type: email
+      #   recipients:
+      #     - stephanie@shippable.com
+      #     # - stephanieshiptesting@gmail.com
+      #   branches:
+      #     only:
+      #         - notifications
+      #   on_success: always
+      #   on_failure: always
