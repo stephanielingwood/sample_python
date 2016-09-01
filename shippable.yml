@@ -8,6 +8,7 @@ env:
     - TEST_VAR=reallyAwesomeString
 
 build:
+  cache: true
   # pre_ci_boot:
   #   image_name: manishas/myImage
   #   image_tag: latest
