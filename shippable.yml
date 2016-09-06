@@ -29,7 +29,7 @@ build:
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
 
-integrations:
-  hub:
-    - integrationName: stephDocker
-      type: docker
+# integrations:
+#   hub:
+#     - integrationName: stephDocker
+#       type: docker
