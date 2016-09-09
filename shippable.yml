@@ -1,11 +1,11 @@
-language: scala
+language: java
 
 services:
   - postgres
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14scapls
+    image_name: drydock/u14javpls
     image_tag: prod
     pull: true
   ci:
