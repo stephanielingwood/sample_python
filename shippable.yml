@@ -4,6 +4,10 @@ services:
   - postgres
 
 build:
+  pre_ci_boot:
+    image_name: drydock/u14nodall
+    image_tag: prod
+    pull: true
   ci:
     - psql -c 'create role shippable with superuser;' -U postgres
     - psql -c 'create database deals_test;' -U postgres
