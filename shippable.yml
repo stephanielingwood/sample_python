@@ -1,11 +1,11 @@
-language: ruby
+language: clojure
 
 services:
   - postgres
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14rubpls
+    image_name: drydock/u14clopls
     image_tag: prod
     pull: true
   ci:
