@@ -1,11 +1,11 @@
-language: node_js
+language: python
 
 services:
   - postgres
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14nodpls
+    image_name: drydock/u14pytpls
     image_tag: prod
     pull: true
   ci:
