@@ -1,11 +1,11 @@
-language: clojure
+language: scala
 
 services:
   - postgres
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14clopls
+    image_name: drydock/u14scapls
     image_tag: prod
     pull: true
   ci:
