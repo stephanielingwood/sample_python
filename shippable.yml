@@ -1,11 +1,11 @@
-language: python
+language: ruby
 
 services:
   - postgres
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14pytpls
+    image_name: drydock/u14rubpls
     image_tag: prod
     pull: true
   ci:
