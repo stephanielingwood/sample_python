@@ -22,6 +22,6 @@ beta2:
 
 local:
 
-[![Run Status](http://172.17.42.1:50000/projects/57e2ccdda2052818009345e9/badge?branch=noMatrix)](http://localhost:50001/projects/57e2ccdda2052818009345e9)
+[![Run Status](http://50befe32.ngrok.io/projects/57e2ccdda2052818009345e9/badge?branch=noMatrix)](http://localhost:50001/projects/57e2ccdda2052818009345e9)
 
-[![Coverage Badge](http://172.17.42.1:50000/projects/57e2ccdda2052818009345e9/coverageBadge?branch=noMatrix)](http://localhost:50001/projects/57e2ccdda2052818009345e9)
+[![Coverage Badge](http://50befe32.ngrok.io/projects/57e2ccdda2052818009345e9/coverageBadge?branch=noMatrix)](http://localhost:50001/projects/57e2ccdda2052818009345e9)
