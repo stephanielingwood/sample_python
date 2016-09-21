@@ -7,6 +7,9 @@ class App():
 
     def retrieve(self):
         return self.result
+        
+    def notcalled(self):
+        return 1
 
 if __name__ == "__main__":
     app = App()
