@@ -3,6 +3,9 @@ language: python
 python:
   - 2.7
 
+services:
+  - selenium
+
 env:
   global:
     - TEST_VAR=reallyAwesomeString
@@ -22,6 +25,7 @@ build:
     # - npm --version
     # - npm update
     # - npm --version
+    - apt-get update
     - pip install -r requirements.txt
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
