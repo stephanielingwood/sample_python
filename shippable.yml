@@ -1,7 +1,7 @@
-language: python
+language: ruby
 
-python:
-  - 2.7
+ruby:
+  - 2.0.0
 
 services:
   - selenium
