@@ -19,3 +19,9 @@ beta2:
  [![Run Status](https://api.qhode.com/projects/57d1e17c5aae6c100052a705/badge?branch=noMatrix)](https://qhode.com/projects/57d1e17c5aae6c100052a705) 
  
  [![Coverage Badge](https://api.qhode.com/projects/57d1e17c5aae6c100052a705/coverageBadge?branch=noMatrix)](https://qhode.com/projects/57d1e17c5aae6c100052a705) 
+
+local:
+
+[![Run Status](http://172.17.42.1:50000/projects/57e2ccdda2052818009345e9/badge?branch=noMatrix)](http://localhost:50001/projects/57e2ccdda2052818009345e9)
+
+[![Coverage Badge](http://172.17.42.1:50000/projects/57e2ccdda2052818009345e9/coverageBadge?branch=noMatrix)](http://localhost:50001/projects/57e2ccdda2052818009345e9)
