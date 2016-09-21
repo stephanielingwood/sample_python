@@ -1,7 +1,7 @@
-language: ruby
+language: go
 
-ruby:
-  - 2.0.0
+go:
+  - 1.2
 
 services:
   - selenium
