@@ -14,3 +14,8 @@ change 1 in testing branch
 beta:
  [![Run Status](https://apibeta.shippable.com/projects/564e6fb2d78fc6fc59652b5e/badge?branch=noMatrix)](https://beta.shippable.com/projects/564e6fb2d78fc6fc59652b5e) 
  [![Coverage Badge](https://apibeta.shippable.com/projects/564e6fb2d78fc6fc59652b5e/coverageBadge?branch=noMatrix)](https://beta.shippable.com/projects/564e6fb2d78fc6fc59652b5e) 
+
+beta2:
+ [![Run Status](https://api.qhode.com/projects/57d1e17c5aae6c100052a705/badge?branch=noMatrix)](https://qhode.com/projects/57d1e17c5aae6c100052a705) 
+ 
+ [![Coverage Badge](https://api.qhode.com/projects/57d1e17c5aae6c100052a705/coverageBadge?branch=noMatrix)](https://qhode.com/projects/57d1e17c5aae6c100052a705) 
