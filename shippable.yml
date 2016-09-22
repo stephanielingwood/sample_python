@@ -9,7 +9,7 @@ env:
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14scaall
+    image_name: drydock/u14phpall
     image_tag: prod
     pull: true
     options: "-e HOME=/root"
