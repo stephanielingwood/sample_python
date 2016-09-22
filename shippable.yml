@@ -9,7 +9,7 @@ env:
 
 build:
   pre_ci_boot:
-    image_name: drydock/u1javall
+    image_name: drydock/u1scaall
     image_tag: prod
     pull: true
     options: "-e HOME=/root"
