@@ -3,16 +3,13 @@ language: python
 python:
   - 2.7
 
-services:
-  - selenium
-
 env:
   global:
     - TEST_VAR=reallyAwesomeString
 
 build:
   pre_ci_boot:
-    image_name: drydock/u1phpall
+    image_name: drydock/u1javall
     image_tag: prod
     pull: true
     options: "-e HOME=/root"
