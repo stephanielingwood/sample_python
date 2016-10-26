@@ -12,9 +12,8 @@ install:
 
 build:
   ci:  
-    # - mkdir -p shippable/testresults
-    # - mkdir -p shippable/codecoverage
-    - cd shippable/codecoverage/nonexistantdir
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
     - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
@@ -31,8 +30,7 @@ integrations:
           - FIZZ=BUZZ
         branches:
           only:
-            - master
-            - dev
+            - notifications
         on_success: always
         on_failure: always
         on_pull_request: never
@@ -43,11 +41,22 @@ integrations:
           - "#testissues"
           - "@stephanielingwood"
         branches:
-            only:
-              - notifications
+          only:
+            - notifications
         on_start: always
         on_success: always
         on_failure: always
+      - integrationName: stephHipchat
+        type: hipchat
+        recipients:
+          - "#Stephanie-test"
+          - "@stephanietest"
+        branches:
+          only:
+            - notifications
+        on_start: always
+        on_success: always
+        on_failure: always        
       - integrationName: irc
         type: irc
         recipients:
@@ -55,16 +64,15 @@ integrations:
           - "chat.freenode.net#eddyline1"
         branches:
           only:
-              - notifications
+            - notifications
         on_success: always
         on_failure: always
       - integrationName: email
         type: email
         recipients:
           - stephanie@shippable.com
-          # - stephanieshiptesting@gmail.com
         branches:
           only:
-              - notifications
+            - notifications
         on_success: always
         on_failure: always
