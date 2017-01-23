@@ -38,7 +38,7 @@ integrations:
       - integrationName: stephSlack
         type: slack
         recipients:
-          - "#testissues"
+          - "#slack_notifications"
           - "@stephanielingwood"
         branches:
           only:
