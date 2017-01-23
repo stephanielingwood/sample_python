@@ -31,10 +31,10 @@ integrations:
         branches:
           only:
             - notifications
+        on_start: always            
         on_success: always
         on_failure: always
         on_pull_request: never
-        on_start: always
       - integrationName: stephSlack
         type: slack
         recipients:
@@ -65,6 +65,7 @@ integrations:
         branches:
           only:
             - notifications
+        on_start: always
         on_success: always
         on_failure: always
       - integrationName: email
@@ -74,5 +75,6 @@ integrations:
         branches:
           only:
             - notifications
+        on_start: always
         on_success: always
         on_failure: always
