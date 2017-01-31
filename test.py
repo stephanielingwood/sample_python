@@ -1,4 +1,5 @@
 import unittest
+import celery
 from app import App
 
 class TestSuite(unittest.TestCase):
