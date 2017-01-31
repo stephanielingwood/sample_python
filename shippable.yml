@@ -1,29 +1,14 @@
 language: python
 
 python:
-- 2.7
+  - 2.7
 
-install:
-  - pip install celery
-#  - pip install -r requirements.txt
-  - which celery
-  - sudo apt-get install tree
-  - tree
-
-before_script: 
-  - mkdir -p shippable/testresults
-  - mkdir -p shippable/codecoverage
-
-script:
-#  - cd source_apps/
-#  - py.test
-#  - cd ..
-  - cd my_dir
-  - python testImport.py
-  - cd ..
-  - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-  - which python && coverage run --branch test.py
-  - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-
-
-cache: true
+build:
+  cache: true
+  ci:
+    - pip install celery
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
+    - cd source_apps/
+    - py.test
+    - cd ..
