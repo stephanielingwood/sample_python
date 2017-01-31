@@ -5,6 +5,7 @@ python:
 
 install:
   - pip install celery
+  - which celery
   - sudo apt-get install tree
   - tree
 
