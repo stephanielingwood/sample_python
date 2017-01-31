@@ -5,6 +5,8 @@ python:
 
 install:
   - pip install celery
+  - sudo apt-get install tree
+  - tree
 
 before_script: 
   - mkdir -p shippable/testresults
