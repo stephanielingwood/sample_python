@@ -62,7 +62,7 @@ integrations:
         type: irc
         recipients:
           - "chat.freenode.net#eddyline1"        
-          - "chat.freenode.net#test-irc"
+          - "chat.freenode.net#eddyline2"
         branches:
           only:
             - notifications
