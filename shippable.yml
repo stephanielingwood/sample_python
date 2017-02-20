@@ -6,7 +6,7 @@ python:
 env:
   global:
     - TEST_VAR=reallyAwesomeString
-    - secure: b+VumaBKbr+ovdCgkVnDIOvW426yDub6Zs1ys4Ft/y4bLwPQSIzf6qgLfPT2PVjDd6DjJf/3G/NRWeNsvXGQY3sECh01uOszmZs4jLb0nhBR4/pXPxWdDvJotz6i1mj3wGX405YNVGA71phSQMQjCUrepCjIqA9OWE8RkpsbQsKiP+Q33McMiqIBL/p/DH6e6qNzUIHxmm+xCUkJGe41wRBFTMTq7T/R8tG0779XjQfTukj8CesJJQio7YpYwsxjUNTqaWGSGz7ckEQn6yG+aeDW3bbHAYZWvEEDwBlL9jY1mijsRi/IelHFg7mqR2BbgXc1jXd2CUISrSGm86YClg==
+    - secure: BROKENb+VumaBKbr+ovdCgkVnDIOvW426yDub6Zs1ys4Ft/y4bLwPQSIzf6qgLfPT2PVjDd6DjJf/3G/NRWeNsvXGQY3sECh01uOszmZs4jLb0nhBR4/pXPxWdDvJotz6i1mj3wGX405YNVGA71phSQMQjCUrepCjIqA9OWE8RkpsbQsKiP+Q33McMiqIBL/p/DH6e6qNzUIHxmm+xCUkJGe41wRBFTMTq7T/R8tG0779XjQfTukj8CesJJQio7YpYwsxjUNTqaWGSGz7ckEQn6yG+aeDW3bbHAYZWvEEDwBlL9jY1mijsRi/IelHFg7mqR2BbgXc1jXd2CUISrSGm86YClg==
 
 build:
   # pre_ci_boot:
