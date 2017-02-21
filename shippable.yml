@@ -3,9 +3,11 @@ language: python
 python:
   - 2.7
 
-env:
-  global:
-    - TEST_VAR=reallyAwesomeString
+#addons:
+#  - selenium: 3.1
+  
+services:
+  - selenium
 
 build:
   # pre_ci_boot:
@@ -22,12 +24,7 @@ build:
     # - npm --version
     # - npm update
     # - npm --version
-    - pip install -r requirements.txt
-    - mkdir -p shippable/testresults
-    - mkdir -p shippable/codecoverage
-    - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
-    - which python && coverage run --branch test.py
-    - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
+    - selenium --version
 
 # integrations:
 #   hub:
