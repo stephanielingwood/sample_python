@@ -13,9 +13,9 @@ addons:
 #  - selenium
 
 build:
-  # pre_ci_boot:
-  #   image_name: manishas/myImage
-  #   image_tag: latest
+   pre_ci_boot:
+     image_name: drydock/u14javall
+     image_tag: prod
   #   pull: true
   #   options: "-e HOME=/root"
   ci:
