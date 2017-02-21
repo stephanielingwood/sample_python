@@ -3,8 +3,8 @@ language: python
 python:
   - 2.7
 
-#addons:
-#  - selenium: 3.1
+addons:
+  selenium: 3.1
   
 services:
   - selenium
@@ -24,7 +24,7 @@ build:
     # - npm --version
     # - npm update
     # - npm --version
-    - selenium --version
+    - echo "hooray selenium!"
 
 # integrations:
 #   hub:
