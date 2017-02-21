@@ -6,8 +6,8 @@ python:
 addons:
   selenium: 3.1
   
-services:
-  - selenium
+#services:
+#  - selenium
 
 build:
   # pre_ci_boot:
@@ -25,6 +25,7 @@ build:
     # - npm update
     # - npm --version
     - echo "hooray selenium!"
+    - sudo su -c "java -jar /srv/selenium-server-standalone-3.1.0.jar -Djava.security.egd=file:///dev/urandom -port 4444"
 
 # integrations:
 #   hub:
