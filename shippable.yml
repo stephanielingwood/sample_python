@@ -32,10 +32,11 @@ build:
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   on_success: 
     - pip install python-coveralls
+    - docker login
     
 
-# integrations:
-#   hub:
-#     - integrationName: stephDocker
-#       type: docker
+ integrations:
+   hub:
+     - integrationName: stephDocker
+       type: docker
 
