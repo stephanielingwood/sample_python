@@ -34,9 +34,8 @@ build:
     - pip install python-coveralls
     - docker login
     
-
- integrations:
-   hub:
-     - integrationName: stephDocker
-       type: docker
+integrations:
+  hub:
+    - integrationName: stephDocker
+      type: docker
 
