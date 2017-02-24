@@ -22,6 +22,7 @@ build:
     # - npm --version
     # - npm update
     # - npm --version
+    - pip install --disable-pip-version-check --upgrade pip
     - pip install -r requirements.txt
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
@@ -30,6 +31,7 @@ build:
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   on_success: 
     - pip install python-coveralls
+    
 
 # integrations:
 #   hub:
