@@ -16,4 +16,4 @@ build:
   ci:
     - pwd
     - echo $JOB_STATE
-    - tar -C $SHIPPABLE_BUILD_DIR -xcvf $JOB_STATE/archive.tar.gz .
+    - tar -C $SHIPPABLE_BUILD_DIR -cvf $JOB_STATE/archive.tar.gz .
