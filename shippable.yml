@@ -16,4 +16,6 @@ build:
   ci:
     - pwd
     - echo $JOB_STATE
-    - tar -C $SHIPPABLE_BUILD_DIR -czvf $JOB_STATE/archive.tar.gz .
+    - echo "COMMIT_SHA=$COMMIT" > $JOB_STATE/commit.env 
+    - cat $JOB_STATE/commit.env
+  #  - tar -C $SHIPPABLE_BUILD_DIR -czvf $JOB_STATE/archive.tar.gz .
