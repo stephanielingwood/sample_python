@@ -7,6 +7,7 @@ language: c
 env:
   - DOG=sadie
   - DOG2=kieran
+  - DOG3=malachy
 
 matrix:
   include:
