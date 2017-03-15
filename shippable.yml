@@ -4,10 +4,10 @@ language: none
 #  - 2.7
 #  - 3.5
 
-matrix:
-  include:
-    - python: 3.5
-      env: CAT=oscar
+#matrix:
+#  include:
+#    - python: 3.5
+#      env: CAT=oscar
 
 build:
   ci:
