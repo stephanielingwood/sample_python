@@ -1,8 +1,12 @@
-language: none
+language: python
 
-#python:
-#  - 2.7
+python:
+  - 2.7
 #  - 3.5
+
+gemfile:
+  - foo.txt
+  - bar.txt
 
 #matrix:
 #  include:
