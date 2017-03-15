@@ -4,8 +4,14 @@ python:
   - 2.7
   - 3.5
 
+matrix:
+  include:
+    - python: 2.6
+      env: CAT=oscar
+
 build:
   ci:
     - echo "hello world"
+    = echo $CAT
 
 
