@@ -12,6 +12,6 @@ matrix:
 build:
   ci:
     - echo "hello world"
-    = echo $CAT
+    - echo $CAT
 
 
