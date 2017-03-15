@@ -1,27 +1,20 @@
-language: c
+language: python
 
-#python:
-#  - 2.7
+python:
+  - 2.7
 #  - 3.5
 
-env:
-  matrix: 
-    - DOG=sadie
-    - DOG2=kieran
-    - DOG3=malachy
-  global:
-    - FOO=true
-    - BAR=false
-
-#matrix:
-#  include:
-#    - python: 3.5
-#      env: CAT=oscar
+matrix:
+  include:
+    - python: 3.5
+      env: CAT=oscar
 
 build:
   ci:
     - echo "hello world"
     - python --version
     - echo $CAT
+    - echo $FOO
+    - echo $FIZZ
 
 
