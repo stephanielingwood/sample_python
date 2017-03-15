@@ -1,4 +1,4 @@
-# language: python
+language: python
 
 # python:
 #  - 2.7
@@ -6,7 +6,7 @@
 
 matrix:
   include:
-    - python: 2.6
+    - python: 3.5
       env: CAT=oscar
 
 build:
