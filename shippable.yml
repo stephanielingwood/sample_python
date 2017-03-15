@@ -8,10 +8,10 @@ env:
   - DOG=sadie
   - DOG2=kieran
 
-#matrix:
-#  include:
-#    - python: 3.5
-#      env: CAT=oscar
+matrix:
+  include:
+    - python: 3.5
+      env: CAT=oscar
 
 build:
   ci:
