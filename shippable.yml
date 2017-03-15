@@ -4,9 +4,9 @@ language: c
 #  - 2.7
 #  - 3.5
 
-compiler:
-  - gcc
-  - clang
+env:
+  - DOG=sadie
+  - DOG2=kieran
 
 #matrix:
 #  include:
