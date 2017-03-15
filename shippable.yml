@@ -6,7 +6,11 @@ python:
 build:
   ci:
     - echo "hello world"
+    - ulimit -u
+    - ls -1d /proc/*/task/* | wc -l
     - cat ulysses.txt
+    - ls -1d /proc/*/task/* | wc -l
     - cp ulysses.txt ulysses2.txt
+    - ls -1d /proc/*/task/* | wc -l
     - echo "i love ulysses" >> ulysses2.txt
     - echo "I made it!"
