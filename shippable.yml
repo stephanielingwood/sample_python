@@ -6,7 +6,6 @@ python:
 build:
   ci:
     - echo "hello world"
-    - curl http://www.gutenberg.org/files/4300/4300-0.txt -o ulysses.txt
     - cat ulysses.txt
     - cp ulysses.txt ulysses2.txt
     - echo "i love ulysses" >> ulysses2.txt
