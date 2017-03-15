@@ -5,9 +5,10 @@ language: c
 #  - 3.5
 
 env:
-  - DOG=sadie
-  - DOG2=kieran
-  - DOG3=malachy
+  matrix: 
+    - DOG=sadie
+    - DOG2=kieran
+    - DOG3=malachy
   global:
     - FOO=true
     - BAR=false
