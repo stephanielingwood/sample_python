@@ -1,12 +1,12 @@
-language: python
+language: c
 
-python:
-  - 2.7
+#python:
+#  - 2.7
 #  - 3.5
 
-gemfile:
-  - foo.txt
-  - bar.txt
+compiler:
+  - gcc
+  - clang
 
 matrix:
   include:
