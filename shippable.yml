@@ -8,6 +8,9 @@ env:
   - DOG=sadie
   - DOG2=kieran
   - DOG3=malachy
+  global:
+    - FOO=true
+    - BAR=false
 
 matrix:
   include:
