@@ -14,14 +14,6 @@ build:
   #   pull: true
   #   options: "-e HOME=/root"
   ci:
-    # - node --version
-    # - ls -la ~/ | grep bash
-    # - echo "source ~/.nvm/nvm.sh" >> ~/.bashrc
-    # - ls -la ~/ | grep nvm
-    # - nvm --help
-    # - npm --version
-    # - npm update
-    # - npm --version
     - pip install --disable-pip-version-check --upgrade pip
     - pip install --upgrade wheel
     - pip install -r requirements.txt
@@ -32,10 +24,3 @@ build:
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   on_success: 
     - pip install python-coveralls
-    - docker login
-    
-integrations:
-  hub:
-    - integrationName: stephDocker
-      type: docker
-
