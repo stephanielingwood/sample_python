@@ -8,11 +8,9 @@ env:
     - TEST_VAR=reallyAwesomeString
 
 build:
-  # pre_ci_boot:
-  #   image_name: manishas/myImage
-  #   image_tag: latest
-  #   pull: true
-  #   options: "-e HOME=/root"
+  pre_ci_boot:
+    image_name: drydock/u14pytall
+    image_tag: v5.3.2
   ci:
     # - node --version
     # - ls -la ~/ | grep bash
