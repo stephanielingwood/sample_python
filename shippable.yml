@@ -4,8 +4,8 @@ python:
   - 2.7
   
 env:
-  - TEST_TO_RUN="nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml"
-  - TEST_TO_RUN="nosetests test.py"
+  - TEST_TO_RUN="test.py"
+  - TEST_TO_RUN="test2.py"
 
 build: 
   ci:
@@ -13,5 +13,6 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - $TEST_TO_RUN
-    - which python && coverage run --branch test.py
-    - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
+    - nosetests $TEST_TO_RUN --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+    - which python && coverage run --branch $TEST_TO_RUN
+    - which python && coverage xml -o shippable/codecoverage/coverage.xml $TEST_TO_RUN
