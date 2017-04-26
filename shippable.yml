@@ -1,15 +1,7 @@
 language: python
 
-#python:
-#  - 3.5
-
-#env:
-#  global:
-#    - TEST_VAR=reallyAwesomeString
-
-matrix:
-  include:
-    - python: 3.5
+python:
+  - 2.7
 
 build:
   # pre_ci_boot:
@@ -26,5 +18,15 @@ build:
     - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-  on_success: 
-    - pip install python-coveralls
+  post_ci:
+    - docker commit $SHIPPABLE_CONTAINER_NAME stpehanielingwood/conatainer:$BUILD_NUMBER
+    - docker push stephanielingwood/container:$BUILD_NUMBER
+    
+integrations:
+  hub:
+    - integrationName: stephDocker
+      type: docker                        
+#     branches:                           
+#       only:
+#         - master
+#         - dev
