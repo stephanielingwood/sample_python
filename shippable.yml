@@ -19,13 +19,13 @@ build:
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   post_ci:
-    - docker commit $SHIPPABLE_CONTAINER_NAME 003199252576.dkr.ecr.us-east-1.amazonaws.com/container:$BUILD_NUMBER
-    - docker push 003199252576.dkr.ecr.us-east-1.amazonaws.com/container:$BUILD_NUMBER
+    - docker commit $SHIPPABLE_CONTAINER_NAME us.gcr.io/testgcrproject/container:$BUILD_NUMBER
+    - docker push us.gcr.io/testgcrproject/container:$BUILD_NUMBER
     
 integrations:
   hub:
-    - integrationName: stephECR
-      type: ecr                        
+    - integrationName: stephGCR
+      type: gcr                        
 #     branches:                           
 #       only:
 #         - master
