@@ -20,49 +20,48 @@ build:
 
 integrations:
     notifications:
-      - integrationName: stephWebhook
-        type: webhook
-        payload:
-          - isPRBuild=$IS_PULL_REQUEST
-          - branchName=$BRANCH
-          - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
-          - FOO=BAR
-          - FIZZ=BUZZ
-          - JOBNUMBER=$JOB_NUMBER
-        branches:
-          only:
-            - notifications
-        on_start: always            
-        on_success: always
-        on_failure: always
-        on_pull_request: never
-      - integrationName: stephSlack
-        type: slack
-        recipients:
-          - "#slack_notifications"
-          - "@stephanielingwood"
-        branches:
-          only:
-           - notifications
-        on_start: always
-        on_success: always
-        on_failure: always
-      - integrationName: stephHipchat
-        type: hipchat
-        recipients:
-          - "#Stephanie-test"
-          - "@stephanietest"
-        branches:
-         only:
-            - notifications
-        on_start: always
-        on_success: always
-        on_failure: always        
+#      - integrationName: stephWebhook
+#        type: webhook
+#        payload:
+#          - isPRBuild=$IS_PULL_REQUEST
+#          - branchName=$BRANCH
+#          - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
+#          - FOO=BAR
+#          - FIZZ=BUZZ
+#          - JOBNUMBER=$JOB_NUMBER
+#        branches:
+#          only:
+#            - notifications
+#        on_start: always            
+#       on_success: always
+#        on_failure: always
+#        on_pull_request: never
+#     - integrationName: stephSlack
+#        type: slack
+#        recipients:
+#          - "#slack_notifications"
+#          - "@stephanielingwood"
+#        branches:
+#          only:
+#           - notifications
+#        on_start: always
+#        on_success: always
+#        on_failure: always
+#      - integrationName: stephHipchat
+#        type: hipchat
+#        recipients:
+#          - "#Stephanie-test"
+#          - "@stephanietest"
+#        branches:
+#         only:
+#            - notifications
+#        on_start: always
+#        on_success: always
+#        on_failure: always        
       - integrationName: irc
         type: irc
-        recipients:
-          - "chat.freenode.net#eddyline2"        
-          - "chat.freenode.net#eddyline1"        
+        recipients:    
+          - "chat.freenode.net#eddyline"        
  #         - "chat.freenode.net#eddyline2"
         branches:
           only:
@@ -70,16 +69,16 @@ integrations:
         on_start: always
         on_success: always
         on_failure: always
-      - integrationName: email
-        type: email
-        recipients:
-         - stephanie@shippable.com
-        branches:
-          only:
-            - notifications
-        on_start: always
-        on_success: always
-        on_failure: always
+#      - integrationName: email
+#        type: email
+#        recipients:
+#         - stephanie@shippable.com
+#        branches:
+#          only:
+#            - notifications
+#        on_start: always
+#        on_success: always
+#        on_failure: always
 
 
 
