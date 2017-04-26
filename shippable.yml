@@ -19,6 +19,7 @@ build:
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   post_ci:
+    - gcloud info
     - docker commit $SHIPPABLE_CONTAINER_NAME us.gcr.io/testgcrproject/container:$BUILD_NUMBER
     - docker push us.gcr.io/testgcrproject/container:$BUILD_NUMBER
     
