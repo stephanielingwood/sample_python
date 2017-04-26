@@ -24,7 +24,7 @@ build:
     
 integrations:
   hub:
-    - integrationName: stephDocker
+    - integrationName: stephECR
       type: docker                        
 #     branches:                           
 #       only:
