@@ -33,31 +33,31 @@ integrations:
           only:
             - notifications
         on_start: always            
-#        on_success: always
-#        on_failure: always
-#        on_pull_request: never
-#      - integrationName: stephSlack
-#        type: slack
-#        recipients:
-#          - "#slack_notifications"
-#          - "@stephanielingwood"
-#        branches:
-#          only:
-#           - notifications
-#       on_start: always
-#        on_success: always
-#        on_failure: always
-#     - integrationName: stephHipchat
-#        type: hipchat
-#        recipients:
-#          - "#Stephanie-test"
-#          - "@stephanietest"
-#        branches:
-#         only:
-#            - notifications
-#        on_start: always
-#        on_success: always
-#        on_failure: always        
+        on_success: always
+        on_failure: always
+        on_pull_request: never
+      - integrationName: stephSlack
+        type: slack
+        recipients:
+          - "#slack_notifications"
+          - "@stephanielingwood"
+        branches:
+          only:
+           - notifications
+       on_start: always
+        on_success: always
+        on_failure: always
+     - integrationName: stephHipchat
+        type: hipchat
+        recipients:
+          - "#Stephanie-test"
+          - "@stephanietest"
+        branches:
+         only:
+            - notifications
+        on_start: always
+        on_success: always
+        on_failure: always        
       - integrationName: irc
         type: irc
         recipients:
@@ -70,16 +70,16 @@ integrations:
         on_start: always
         on_success: always
         on_failure: always
-#      - integrationName: email
-#        type: email
-#        recipients:
-#         - stephanie@shippable.com
-#        branches:
-#          only:
-#            - notifications
-#        on_start: always
-#        on_success: always
-#        on_failure: always
+      - integrationName: email
+        type: email
+        recipients:
+         - stephanie@shippable.com
+        branches:
+          only:
+            - notifications
+        on_start: always
+        on_success: always
+        on_failure: always
 
 
 
