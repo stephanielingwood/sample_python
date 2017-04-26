@@ -19,7 +19,7 @@ build:
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
   post_ci:
-    - docker commit $SHIPPABLE_CONTAINER_NAME stpehanielingwood/container:$BUILD_NUMBER
+    - docker commit $SHIPPABLE_CONTAINER_NAME stephanielingwood/container:$BUILD_NUMBER
     - docker push stephanielingwood/container:$BUILD_NUMBER
     
 integrations:
