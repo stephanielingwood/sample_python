@@ -4,11 +4,11 @@ python:
   - 2.7
 
 build:
-  # pre_ci_boot:
-  #   image_name: manishas/myImage
-  #   image_tag: latest
-  #   pull: true
-  #   options: "-e HOME=/root"
+   pre_ci_boot:
+     image_name: drydock/u14pytall:v5.4.1
+     image_tag: latest
+     pull: true
+     options: "-e HOME=/root"
   ci:
     - pip install --disable-pip-version-check --upgrade pip
     - pip install --upgrade wheel
@@ -18,7 +18,6 @@ build:
     - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-  push:
     - touch test.txt
     - echo 'hello world!' > test.txt
     - jfrog rt u test.txt example-repo-local
