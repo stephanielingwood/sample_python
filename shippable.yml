@@ -24,7 +24,7 @@ build:
     
 integrations:
   hub:
-    - integrationName: stephJfrog
+    - integrationName: stephJfrogs
       type: artifactory                        
 #     branches:                           
 #       only:
