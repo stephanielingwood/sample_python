@@ -3,13 +3,12 @@ language: python
 python:
   - 2.7
 
-pre_ci_boot:
- image_name: drydock/u14pytall:v5.4.1
- image_tag: latest
- pull: true
- options: "-e HOME=/root"
-
 build:
+  pre_ci_boot:
+    image_name: drydock/u14pytall:v5.4.1
+    image_tag: latest
+    pull: true
+    options: "-e HOME=/root"
   ci:
     - pip install --disable-pip-version-check --upgrade pip
     - pip install --upgrade wheel
