@@ -18,9 +18,9 @@ build:
     - nosetests test.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
     - which python && coverage run --branch test.py
     - which python && coverage xml -o shippable/codecoverage/coverage.xml test.py
-    - touch test.txt
-    - echo 'hello world!' > test.txt
-    - jfrog rt u test.txt example-repo-local
+    - touch testAdmiral.txt
+    - echo 'hello world!' > testAdmiral.txt
+    - jfrog rt u testAdmiral.txt example-repo-local
     
 integrations:
   hub:
