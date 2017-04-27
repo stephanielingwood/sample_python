@@ -5,8 +5,8 @@ python:
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14pytall:v5.4.1
-    image_tag: latest
+    image_name: drydock/u14pytall
+    image_tag: v5.4.1
     pull: true
     options: "-e HOME=/root"
   ci:
