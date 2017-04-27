@@ -21,7 +21,7 @@ build:
   push:
     - touch test.txt
     - echo 'hello world!' > test.txt
-    - jfrog rt u example-repo-local/test.txt
+    - jfrog rt u test.txt example-repo-local
     
 integrations:
   hub:
